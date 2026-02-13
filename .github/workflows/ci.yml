@@ -7,12 +7,13 @@ on:
     branches: [main]
   workflow_call:
 
+permissions:
+  contents: read
+
 jobs:
   ci:
     name: Run CI Checks
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
 
     steps:
       - uses: actions/checkout@v4
