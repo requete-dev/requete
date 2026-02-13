@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "requete"
+version = "0.1.0"
+description = "Python decorators for defining data pipeline nodes with the Requete IDE"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+authors = [
+    { name = "Karteek", email = "karteek@requete.dev" }
+]
+keywords = ["data pipelines", "data engineering", "spark", "duckdb", "dag", "decorators"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Database",
+]
+
+[project.urls]
+Homepage = "https://github.com/requete-dev/requete"
+Repository = "https://github.com/requete-dev/requete"
+Issues = "https://github.com/requete-dev/requete/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["requete*"]

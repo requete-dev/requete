@@ -1,0 +1,16 @@
+**/__pycache__
+.claude/
+
+# UV
+uv.lock
+.venv/
+.python-version
+
+# Python
+*.egg-info
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+.ruff_cache/
