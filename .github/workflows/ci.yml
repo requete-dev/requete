@@ -9,6 +9,7 @@ on:
 
 jobs:
   ci:
+    name: Run CI Checks
     runs-on: ubuntu-latest
 
     steps:
