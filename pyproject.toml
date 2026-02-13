@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "requete"
-version = "0.1.0"
+version = "0.1.1"
 description = "Python decorators for defining data pipeline nodes with the Requete IDE"
 readme = "README.md"
 license = "MIT"
