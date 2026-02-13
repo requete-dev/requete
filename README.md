@@ -1,6 +1,6 @@
 # Requete Python Library
 
-**Version:** 0.1.1
+**Version:** 0.1.2
 
 Requete is a Python library for defining data pipelines as code. It provides decorators that mark functions as pipeline nodes, enabling the Requete IDE to build DAGs, validate dependencies, and generate executable artifacts.
 
@@ -94,7 +94,7 @@ def users_prod(sparkSession: SparkSession) -> DataFrame:
 
 ## Documentation
 
-- **[Full Specification](SPECIFICATION.md)**: Complete reference for all decorators, rules, and examples
+- **[Full Specification](https://github.com/requete-dev/requete/blob/main/SPECIFICATION.md)**: Complete reference for all decorators, rules, and examples
 - **[FAQ](https://github.com/requete-dev/requete#faq)**: Common questions and design decisions
 
 ## Example Pipeline Structure
