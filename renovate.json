@@ -1,0 +1,49 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "dependencyDashboard": true,
+  "dependencyDashboardTitle": "Dependency Updates (Manual Review Required)",
+  "labels": ["dependencies", "renovate"],
+  "timezone": "Asia/Kolkata",
+  "schedule": ["* 16 * * 1"],
+  "prHourlyLimit": 5,
+  "automerge": false,
+  "packageRules": [
+    {
+      "description": "GitHub Actions trusted vendors: non-major updates",
+      "extends": ["helpers:pinGitHubActionDigestsToSemver"],
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["/^actions//", "/^astral-sh//"],
+      "groupName": "github-actions-trusted",
+      "labels": ["dependencies", "renovate", "non-major-update"]
+    },
+    {
+      "description": "GitHub Actions trusted vendors: major updates",
+      "extends": ["helpers:pinGitHubActionDigestsToSemver"],
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["major"],
+      "matchPackageNames": ["/^actions//", "/^astral-sh//"],
+      "groupName": "github-actions-trusted-major",
+      "labels": ["dependencies", "renovate", "major-update"]
+    },
+    {
+      "description": "GitHub Actions community vendors: non-major updates",
+      "extends": ["helpers:pinGitHubActionDigestsToSemver"],
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["!/^actions//", "!/^astral-sh//"],
+      "groupName": "github-actions-community",
+      "labels": ["dependencies", "renovate", "non-major-update"]
+    },
+    {
+      "description": "GitHub Actions community vendors: major updates",
+      "extends": ["helpers:pinGitHubActionDigestsToSemver"],
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["major"],
+      "matchPackageNames": ["!/^actions//", "!/^astral-sh//"],
+      "groupName": "github-actions-community-major",
+      "labels": ["dependencies", "renovate", "major-update"]
+    }
+  ]
+}
