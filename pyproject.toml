@@ -30,6 +30,9 @@ Homepage = "https://github.com/requete-dev/requete"
 Repository = "https://github.com/requete-dev/requete"
 Issues = "https://github.com/requete-dev/requete/issues"
 
+[tool.basedpyright]
+reportUnusedParameter = false
+
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["requete*"]

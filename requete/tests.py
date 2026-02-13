@@ -27,9 +27,9 @@ Example:
     ...     assert "revenue" in daily_metrics_df.columns
 """
 
-from typing import Callable, List, TypeVar
+from typing import Callable, TypeVar
 
-F = TypeVar("F", bound=Callable)
+F = TypeVar("F", bound=Callable[..., object])
 
 
 def unit(tag: str):
@@ -73,7 +73,7 @@ def unit(tag: str):
     return decorator
 
 
-def integration(tag: str, env: List[str]):
+def integration(tag: str, env: list[str]):
     """
     Mark a function as an integration test.
 
@@ -114,7 +114,7 @@ def integration(tag: str, env: List[str]):
     return decorator
 
 
-def promotion(tag: str, env: List[str]):
+def promotion(tag: str, env: list[str]):
     """
     Mark a function as a promotion test.
 
@@ -160,7 +160,7 @@ def promotion(tag: str, env: List[str]):
     return decorator
 
 
-def source(tag: str, env: List[str]):
+def source(tag: str, env: list[str]):
     """
     Mark a function as a source test.
 

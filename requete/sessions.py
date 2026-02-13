@@ -26,12 +26,12 @@ Example:
     ...     )
 """
 
-from typing import Callable, List, TypeVar
+from typing import Callable, TypeVar
 
-F = TypeVar("F", bound=Callable)
+F = TypeVar("F", bound=Callable[..., object])
 
 
-def session(tag: str, pipeline: str, engine: str, env: List[str]):
+def session(tag: str, pipeline: str, engine: str, env: list[str]):
     """
     Mark a function as a session node.
 

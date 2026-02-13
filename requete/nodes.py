@@ -25,12 +25,12 @@ Example:
     ...     return users_df.filter("is_active = true")
 """
 
-from typing import Callable, List, TypeVar
+from typing import Callable, TypeVar
 
-F = TypeVar("F", bound=Callable)
+F = TypeVar("F", bound=Callable[..., object])
 
 
-def source(tag: str, pipeline: str, env: List[str]):
+def source(tag: str, pipeline: str, env: list[str]):
     """
     Mark a function as a data source node.
 
@@ -65,7 +65,7 @@ def source(tag: str, pipeline: str, env: List[str]):
     return decorator
 
 
-def backfill_source(tag: str, pipeline: str, env: List[str]):
+def backfill_source(tag: str, pipeline: str, env: list[str]):
     """
     Mark a function as a backfill source node.
 
@@ -105,7 +105,7 @@ def backfill_source(tag: str, pipeline: str, env: List[str]):
     return decorator
 
 
-def transform(tag: str, pipeline: str, depends_on: List[str]):
+def transform(tag: str, pipeline: str, depends_on: list[str]):
     """
     Mark a function as a transform node.
 
@@ -145,7 +145,7 @@ def transform(tag: str, pipeline: str, depends_on: List[str]):
     return decorator
 
 
-def sink(tag: str, pipeline: str, env: List[str], depends_on: List[str]):
+def sink(tag: str, pipeline: str, env: list[str], depends_on: list[str]):
     """
     Mark a function as a sink node.
 
@@ -184,7 +184,7 @@ def sink(tag: str, pipeline: str, env: List[str], depends_on: List[str]):
     return decorator
 
 
-def promote(tag: str, pipeline: str, env: List[str], depends_on: List[str]):
+def promote(tag: str, pipeline: str, env: list[str], depends_on: list[str]):
     """
     Mark a function as a promote node.
 
