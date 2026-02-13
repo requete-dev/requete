@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
+  "extends": ["config:recommended", "helpers:pinGitHubActionDigestsToSemver"],
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "Dependency Updates (Manual Review Required)",
   "labels": ["dependencies", "renovate"],
@@ -11,7 +11,6 @@
   "packageRules": [
     {
       "description": "GitHub Actions trusted vendors: non-major updates",
-      "extends": ["helpers:pinGitHubActionDigestsToSemver"],
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["minor", "patch"],
       "matchPackageNames": ["/^actions//", "/^astral-sh//"],
@@ -20,7 +19,6 @@
     },
     {
       "description": "GitHub Actions trusted vendors: major updates",
-      "extends": ["helpers:pinGitHubActionDigestsToSemver"],
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["major"],
       "matchPackageNames": ["/^actions//", "/^astral-sh//"],
@@ -29,7 +27,6 @@
     },
     {
       "description": "GitHub Actions community vendors: non-major updates",
-      "extends": ["helpers:pinGitHubActionDigestsToSemver"],
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["minor", "patch"],
       "matchPackageNames": ["!/^actions//", "!/^astral-sh//"],
@@ -38,7 +35,6 @@
     },
     {
       "description": "GitHub Actions community vendors: major updates",
-      "extends": ["helpers:pinGitHubActionDigestsToSemver"],
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["major"],
       "matchPackageNames": ["!/^actions//", "!/^astral-sh//"],
