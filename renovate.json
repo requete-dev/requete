@@ -5,7 +5,7 @@
   "dependencyDashboardTitle": "Dependency Updates (Manual Review Required)",
   "labels": ["dependencies", "renovate"],
   "timezone": "Asia/Kolkata",
-  "schedule": ["* 16 * * 1"],
+  "schedule": ["0 16 * * 1"],
   "prHourlyLimit": 5,
   "automerge": false,
   "packageRules": [
